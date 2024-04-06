@@ -125,13 +125,8 @@ void MostrarMediaDaBanda()
     string nomeDaBanda = Console.ReadLine()!;
     if (bandasRegistradas.ContainsKey(nomeDaBanda))
     {
-        double soma = 0;
-        for (int i = 0; i < bandasRegistradas[nomeDaBanda].Count; i++)
-        {
-            soma += bandasRegistradas[nomeDaBanda][i];
-        }
-        double media = soma / bandasRegistradas[nomeDaBanda].Count;
-        Console.WriteLine($"\nMédia da {nomeDaBanda}: {media}");
+        List<int> notasDaBanda = bandasRegistradas[nomeDaBanda];
+        Console.WriteLine($"\nMédia da {nomeDaBanda}: {notasDaBanda.Average()}");
         AguardandoUsuario();
         Console.Clear();
         ExibirOpcoesDoMenu();
